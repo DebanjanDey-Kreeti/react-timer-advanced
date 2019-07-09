@@ -12,9 +12,9 @@ const Display = (props) => {
       props.timeInterval && (
         <div className="display-countdown">
           <div>
-            <label type = "text" className="display-countdown-label"> H </label>
-            <label type = "text" className="display-countdown-label"> M </label>
-            <label type = "text" className="display-countdown-label"> S </label>
+            <label type = "text" className="display-countdown-label"> HH </label>
+            <label type = "text" className="display-countdown-label"> MM </label>
+            <label type = "text" className="display-countdown-label"> SS </label>
             <label type = "text" className="display-countdown-label"> MS </label>
           </div>
           <div className="display-countdown-time">
@@ -28,9 +28,9 @@ const Display = (props) => {
         <div className="display">
           <div>
             <div>
-              <label type="text" className="display-label"> H </label>
-              <label type="text" className="display-label"> M </label>
-              <label type="text" className="display-label"> S </label>
+              <label type="text" className="display-label"> HH </label>
+              <label type="text" className="display-label"> MM </label>
+              <label type="text" className="display-label"> SS </label>
             </div>
 
           <div className="input-group input-group-lg display-input-group">

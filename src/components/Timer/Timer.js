@@ -70,13 +70,10 @@ class Timer extends Component {
       this.setState((prevState) => {
         minutes = parseInt(this.formatTime(prevState.minutes + minutes));
 
-        if (minutes < 60) {
-          if (parseInt(minutes.toString()[0]) > 5) {
-            minutes = 59;
-          }
-        }
-        else if (minutes > 59) {
-          minutes = parseInt(minutes.toString().slice(minutes.toString().length - 1));
+        if (minutes > 59) {
+          let hours = minutes / 60;
+          minutes = minutes % 60;
+          this.setHours(hours);
         }
 
         return ({ minutes: this.formatTime(minutes) });
@@ -92,14 +89,10 @@ class Timer extends Component {
       this.setState((prevState) => {
         seconds = parseInt(this.formatTime(prevState.seconds + seconds));
 
-        if(seconds < 60) {
-          if (parseInt(seconds.toString()[0]) > 5) {
-            seconds = 59;
-          }
-        }
-
-        else if (seconds > 59) {
-          seconds = parseInt(seconds.toString().slice(seconds.toString().length - 1));
+        if (seconds > 59) {        
+          let minutes = seconds / 60;
+          seconds = seconds % 60;
+          this.setMinutes(minutes);
         }
 
         return ({ seconds: this.formatTime(seconds) });
