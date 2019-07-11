@@ -21,6 +21,7 @@ class Timer extends Component {
     this.handleControlsResume = this.handleControlsResume.bind(this);
     this.handleControlsStop = this.handleControlsStop.bind(this);
     this.handleControlsReset = this.handleControlsReset.bind(this);
+    this.canStart = this.canStart.bind(this);
   }
 
   componentWillUnmount() {
@@ -108,8 +109,7 @@ class Timer extends Component {
   canStart() {
     this.setState((prevState) => ({
       canStart: prevState.status !== 'STARTED' && (parseInt(prevState.hours) > 0
-        || parseInt(prevState.minutes) > 0
-        || parseInt(prevState.seconds) > 0)
+        || parseInt(prevState.minutes) > 0 || parseInt(prevState.seconds) > 0)
     }));
   }
 
@@ -123,9 +123,7 @@ class Timer extends Component {
         this.setState(() => ({ status: 'STARTED' }));
 
         const totalMilliseconds = ((parseInt(this.state.hours) * 60 * 60)
-            + (parseInt(this.state.minutes) * 60)
-            + parseInt(this.state.seconds))
-            * 1000;
+            + (parseInt(this.state.minutes) * 60) + parseInt(this.state.seconds)) * 1000;
 
         this.setState(() => ({ timeInterval: parseInt(totalMilliseconds) }));
 
@@ -189,7 +187,7 @@ render() {
                 status={this.state.status} />
         </div>
     );
-}
+  }
 }
 
 export default Timer;
