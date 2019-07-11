@@ -2,6 +2,8 @@
     background-color: #999;
     padding: 0.2rem;
     height: 10rem;
+    width: 20.5rem;
+    margin-bottom: 2rem;
 }
 
 .keypad-row {
@@ -9,7 +11,7 @@
     display: flex;
     justify-content: center;
     margin: auto;
-    width: 15.6rem;
+    width: 20rem;
 }
 
 .keypad-row > button {
